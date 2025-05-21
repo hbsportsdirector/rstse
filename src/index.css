@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import react-day-picker styles */
+@import 'react-day-picker/dist/style.css';
+
+:root {
+  --primary: 221 83% 53%;
+  --primary-light: 217 91% 60%;
+  --primary-dark: 224 76% 48%;
+  
+  --secondary: 262 83% 58%;
+  --secondary-light: 263 70% 71%;
+  --secondary-dark: 261 51% 51%;
+  
+  --accent: 220 14% 96%;
+  --accent-light: 210 20% 98%;
+  --accent-dark: 220 13% 91%;
+  
+  --success: 142 76% 36%;
+  --warning: 38 92% 50%;
+  --error: 0 84% 60%;
+  
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  
+  --radius: 0.5rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Form styles */
+.form-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.input-field {
+  @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm transition-colors;
+}
+
+/* Calendar custom styles */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #3b82f6;
+  --rdp-background-color: #f3f4f6;
+  --rdp-accent-color-dark: #2563eb;
+  --rdp-background-color-dark: #e5e7eb;
+  --rdp-outline: 2px solid #f3f4f6;
+  --rdp-outline-selected: 2px solid #3b82f6;
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:focus-visible, 
+.rdp-day_selected:hover {
+  background-color: var(--rdp-accent-color);
+  color: white;
+}
+
+.rdp-day_today {
+  background-color: var(--rdp-background-color);
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Button styles */
+.bg-primary {
+  background-color: #3b82f6;
+}
+
+.text-primary {
+  color: #3b82f6;
+}
+
+.hover\:bg-primary-dark:hover {
+  background-color: #2563eb;
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: #3b82f6;
+}
