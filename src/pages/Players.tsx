@@ -37,6 +37,7 @@ const Players = () => {
       if (error) throw error;
       
       setPlayers(data || []);
+      console.log('Fetched players data:', data); // Log the data here
     } catch (err) {
       console.error('Error fetching players:', err);
     } finally {
