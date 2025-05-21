@@ -23,7 +23,7 @@ const Players = () => {
       setLoading(true);
       
       const { data, error } = await supabase
-        .from('players')
+        .from('users')
         .select(`
           *,
           teams (
@@ -31,6 +31,7 @@ const Players = () => {
             name
           )
         `)
+        .eq('role', 'player') // Filter to only get players
         .order('last_name', { ascending: true });
       
       if (error) throw error;
