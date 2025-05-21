@@ -22,17 +22,10 @@ const Players = () => {
     try {
       setLoading(true);
       
+      // Simplified query: Select all from 'users'
       const { data, error } = await supabase
         .from('users')
-        .select(`
-          *,
-          teams (
-            id,
-            name
-          )
-        `)
-        .eq('role', 'player') // Filter to only get players
-        .order('last_name', { ascending: true });
+        .select('*'); 
       
       if (error) throw error;
       
