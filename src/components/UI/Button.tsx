@@ -18,19 +18,22 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
-        {
-          'bg-primary text-white hover:bg-primary-dark focus:ring-primary': variant === 'default',
-          'bg-transparent border border-gray-300 hover:bg-gray-100 focus:ring-gray-400': variant === 'outline',
-          'bg-transparent hover:bg-gray-100 focus:ring-gray-400': variant === 'ghost',
-          'bg-transparent underline-offset-4 hover:underline text-primary focus:ring-primary': variant === 'link',
-          'bg-red-600 text-white hover:bg-red-700 focus:ring-red-600': variant === 'destructive',
-          'h-10 px-4 py-2': size === 'default',
-          'h-9 px-3 text-sm': size === 'sm',
-          'h-11 px-8': size === 'lg',
-          'h-10 w-10': size === 'icon',
-        },
-        className
+        'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none shadow-sm hover:shadow-md hover:-translate-y-px',
+        
+        // Variant styles
+        variant === 'default' && 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+        variant === 'outline' && 'border-2 border-primary text-primary hover:bg-primary/10 focus:ring-primary bg-transparent',
+        variant === 'ghost' && 'hover:bg-primary/10 text-primary focus:ring-primary bg-transparent',
+        variant === 'link' && 'bg-transparent underline-offset-4 hover:underline text-primary focus:ring-primary',
+        variant === 'destructive' && 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-600',
+        
+        // Size styles
+        size === 'default' && 'px-4 py-2 text-sm', 
+        size === 'sm' && 'px-3 py-1.5 text-sm',
+        size === 'lg' && 'px-6 py-2.5 text-base',
+        size === 'icon' && 'h-10 w-10',
+        
+        className // User-provided className
       )}
       {...props}
     >

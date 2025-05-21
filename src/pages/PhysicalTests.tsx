@@ -162,7 +162,7 @@ const PhysicalTests = () => {
                 Edit
               </Button>
               <Button
-                variant="outline"
+                variant="destructive" // Changed from outline
                 size="sm"
                 onClick={() => handleDeleteTest(test.id)}
               >

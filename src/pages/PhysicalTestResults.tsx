@@ -406,6 +406,7 @@ export default function PhysicalTestResults() {
                 onClick={handleSubmit}
                 className="w-full"
                 isLoading={isSubmitting}
+                // TEMPORARY DEBUG STYLE REMOVED
               >
                 <Save className="h-4 w-4 mr-2" />
                 Save Results
@@ -449,7 +450,7 @@ export default function PhysicalTestResults() {
                 size="sm"
                 onClick={() => setSelectedPlayerId(null)}
               >
-                <AlertCircle className="h-4 w-4" />
+                <AlertCircle className="h-4 w-4" /> 
               </Button>
             </div>
             <div className="space-y-4">

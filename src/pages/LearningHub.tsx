@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Book, BookOpen, Users, FileText, PlayCircle, Info, Search, Edit, Trash2, Eye, ArrowUpDown, User, Users2 } from 'lucide-react';
+import { Book, BookOpen, Users, FileText, PlayCircle, Info, Search, Edit, Trash2, Eye, ArrowUpDown, User, Users2, UploadCloud, FilePlus2 } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../components/UI/Card';
 import Button from '../components/UI/Button';
 import { useAuth } from '../context/AuthContext';
@@ -385,7 +385,7 @@ export default function LearningHub() {
                       </CardContent>
                       <CardFooter>
                         {isCoachOrAdmin ? (
-                          <div className="flex gap-2 w-full">
+                          <div className="flex gap-2 w-full items-center">
                             <Button
                               size="sm"
                               variant="outline"
@@ -406,7 +406,7 @@ export default function LearningHub() {
                             </Button>
                             <Button
                               size="sm"
-                              variant="outline"
+                              variant="destructive"
                               className="flex-1"
                               onClick={() => handleDeleteTest(test.id)}
                             >
@@ -548,8 +548,14 @@ export default function LearningHub() {
                         Share articles, videos, and other materials to help players learn
                       </p>
                       <div className="flex justify-center gap-3">
-                        <Button>Upload Resource</Button>
-                        <Button variant="outline">Create Article</Button>
+                        <Button>
+                          <UploadCloud className="mr-2 h-4 w-4" />
+                          Upload Resource
+                        </Button>
+                        <Button variant="outline">
+                          <FilePlus2 className="mr-2 h-4 w-4" />
+                          Create Article
+                        </Button>
                       </div>
                     </div>
                   </CardContent>
